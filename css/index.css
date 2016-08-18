@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+li,ul{
+    list-style: none;
+}
+.warp{
+    position: relative;
+    width: 800px;
+    margin: 0 auto ;
+}
+.smallImgList .list{
+    float: left;
+}
+.bigImgList .list{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bigImgList .oneList{
+    position: relative;
+    width: 800px;
+    height: 500px;
+}
