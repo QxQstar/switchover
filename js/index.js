@@ -29,7 +29,7 @@ $(document).ready(function(){
         var bigImgList = this.bigImgList = $("<ul class='bigImgList clearfix'></ul>");
         var li;
         for(var i = 0;i<4;i++){
-            li = $("<li class='list'></li>").css("z-index",4-i);
+            li = $("<li class='list' data-index="+ i +"></li>").css("z-index",4-i);
             li.append($("<img src='../img/"+this.big +  (i+1) +".jpg'>"));
             this.bigImgList.append(li);
         }
@@ -42,8 +42,27 @@ $(document).ready(function(){
             .createdBigImg()
             .createdSmallImg()
             .warp.appendTo($('body'));
+        return this;
 
     };
+    Component.prototype.addEvent = function(){
+        this.smallImgList.find('li').mouseenter(enterCallBack);
+    };
+    function enterCallBack(event){
+        var $target = event.target;
+        var $index = $($target).attr("data-index");
+        var bigImgList = listObj.bigImgList;
+        var $li = bigImgList.find("li");
+        $li.each(function(index,ele){
+            if($(ele).attr('data-index') === $index){
+                $(ele).stop().animate({"opacity":"1"},350);
+            }else{
+                $(ele).stop().animate({"opacity":"0"},350);
+            }
+        });
+    }
     var listObj = new Component("big_","small_");
-    listObj.insertDocument();
+    listObj
+            .insertDocument()
+            .addEvent();
 });
