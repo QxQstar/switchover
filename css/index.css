@@ -5,6 +5,14 @@
 li,ul{
     list-style: none;
 }
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
 .warp{
     position: relative;
     width: 800px;

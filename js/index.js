@@ -44,7 +44,7 @@ $(document).ready(function(){
         this.warp.append(bigImgList);
         return this;
     };
-    //½«Éú²úµÄÔªËØ²åÈëÎÄµµ
+    //å°†ç”Ÿäº§çš„å…ƒç´ æ’å…¥æ–‡æ¡£
     Component.prototype.insertDocument = function(){
         this.createdWarp()
             .createdBigImg()
@@ -62,7 +62,7 @@ $(document).ready(function(){
         var $index = listObj.index= $($target).attr("data-index");
         listObj.stop().Animated($index);
     }
-    //Ö´ĞĞ¶¯»­
+    //æ‰§è¡ŒåŠ¨ç”»
     Component.prototype.Animated = function($index){
         var smallImgList = this.smallImgList;
         var $smallLi = smallImgList.find("li");
@@ -84,7 +84,7 @@ $(document).ready(function(){
         });
         return this;
     };
-    //×Ô¶¯Ö´ĞĞ
+    //è‡ªåŠ¨æ‰§è¡Œ
     Component.prototype.autoPlay = function(){
         var $this = listObj;
         $this.timer = setTimeout(function(){
@@ -100,7 +100,7 @@ $(document).ready(function(){
         },4000);
 
     };
-    //Çå³ı¶¨Ê±Æ÷
+    //æ¸…é™¤å®šæ—¶å™¨
     Component.prototype.stop = function(){
         clearInterval(listObj.timer);
         return this;
